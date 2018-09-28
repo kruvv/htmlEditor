@@ -12,6 +12,11 @@ import javax.swing.text.StyledEditorKit;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+
+    /** Это вспомогательный класс для инициализации и настройки меню
+     *
+     */
+
 public class MenuHelper {
     public static JMenuItem addMenuItem(JMenu parent, String text, ActionListener actionListener) {
         JMenuItem menuItem = new JMenuItem(text);
@@ -26,18 +31,35 @@ public class MenuHelper {
         return menuItem;
     }
 
+    /** добавляет в parent новый пункт меню с текстом text и действием action при выборе этого метода
+     *
+     * @param parent
+     * @param action
+     * @return
+     */
+
     public static JMenuItem addMenuItem(JMenu parent, Action action) {
         JMenuItem menuItem = new JMenuItem(action);
         parent.add(menuItem);
         return menuItem;
     }
 
+    /** инициализация меню помощи
+     *
+     * @param view
+     * @param menuBar
+     */
     public static void initHelpMenu(View view, JMenuBar menuBar) {
         JMenu helpMenu = new JMenu("Помощь");
         menuBar.add(helpMenu);
-
         addMenuItem(helpMenu, "О программе", view);
     }
+
+    /** инициализация меню выбора шрифта и его размера
+     *
+     * @param view
+     * @param menuBar
+     */
 
     public static void initFontMenu(View view, JMenuBar menuBar) {
         JMenu fontMenu = new JMenu("Шрифт");
@@ -62,6 +84,11 @@ public class MenuHelper {
         fontMenu.addMenuListener(new TextEditMenuListener(view));
     }
 
+    /** инициализация меню выбора цвета
+     *
+     * @param view
+     * @param menuBar
+     */
     public static void initColorMenu(View view, JMenuBar menuBar) {
         JMenu colorMenu = new JMenu("Цвет");
         menuBar.add(colorMenu);
@@ -78,6 +105,11 @@ public class MenuHelper {
         colorMenu.addMenuListener(new TextEditMenuListener(view));
     }
 
+    /** инициализация меню редактирования расположения текста
+     *
+     * @param view
+     * @param menuBar
+     */
     public static void initAlignMenu(View view, JMenuBar menuBar) {
         JMenu alignMenu = new JMenu("Выравнивание");
         menuBar.add(alignMenu);
@@ -89,6 +121,11 @@ public class MenuHelper {
         alignMenu.addMenuListener(new TextEditMenuListener(view));
     }
 
+    /** инициализация меню выбора стиля
+     *
+     * @param view
+     * @param menuBar
+     */
     public static void initStyleMenu(View view, JMenuBar menuBar) {
         JMenu styleMenu = new JMenu("Стиль");
         menuBar.add(styleMenu);
@@ -106,6 +143,12 @@ public class MenuHelper {
         styleMenu.addMenuListener(new TextEditMenuListener(view));
     }
 
+    /** инициализация меню редактирования текста
+     *
+     * @param view
+     * @param menuBar
+     */
+
     public static void initEditMenu(View view, JMenuBar menuBar) {
         JMenu editMenu = new JMenu("Редактировать");
         menuBar.add(editMenu);
@@ -118,6 +161,12 @@ public class MenuHelper {
 
         editMenu.addMenuListener(new UndoMenuListener(view, undoItem, redoItem));
     }
+
+    /** инициализация меню Файл
+     *
+     * @param view
+     * @param menuBar
+     */
 
     public static void initFileMenu(View view, JMenuBar menuBar) {
         JMenu fileMenu = new JMenu("Файл");

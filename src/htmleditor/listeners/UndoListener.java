@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package htmleditor.listeners;
 
 import javax.swing.event.UndoableEditEvent;
@@ -19,3 +20,26 @@ public class UndoListener implements UndoableEditListener {
         undoManager.addEdit(e.getEdit());
     }
 }
+=======
+package htmleditor.listeners;
+
+import javax.swing.event.UndoableEditEvent;
+import javax.swing.event.UndoableEditListener;
+import javax.swing.undo.UndoManager;
+
+public class UndoListener implements UndoableEditListener {
+
+    private UndoManager undoManager;
+
+    // Конструктор, получает менеджер изменений как параметр
+    public UndoListener(UndoManager undoManager) {
+        this.undoManager = undoManager;
+    }
+
+    // Получает изменение и передает в менеджер
+    @Override
+    public void undoableEditHappened(UndoableEditEvent e) {
+        undoManager.addEdit(e.getEdit());
+    }
+}
+>>>>>>> version 2.0

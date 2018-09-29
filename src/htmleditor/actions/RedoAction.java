@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package htmleditor.actions;
 
 
@@ -20,26 +19,4 @@ public class RedoAction extends AbstractAction {
         view.redo();
     }
 }
-=======
-package htmleditor.actions;
 
-
-
-import htmleditor.View;
-
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-
-public class RedoAction extends AbstractAction {
-    private View view;
-
-    public RedoAction(View view) {
-        this.view = view;
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        view.redo();
-    }
-}
->>>>>>> version 2.0
